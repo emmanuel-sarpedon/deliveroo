@@ -1,23 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import "./App.scss";
+import axios from "axios";
+
+import Header from "./Components/Header/Header";
+import RestaurantInfos from "./Components/RestaurantInfos/RestaurantInfos";
+import Menu from "./Components/Menu/Menu";
 
 function App() {
+  const [data, setData] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+
+  const getData = async () => {
+    const response = await axios.get(
+      "https://deliveroo-backend-manu.herokuapp.com/"
+    );
+
+    setData(response.data);
+
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      {isLoading ? (
+        "chargement en cours"
+      ) : (
+        <>
+          <Header />
+          <RestaurantInfos
+            name={data.restaurant.name}
+            description={data.restaurant.description}
+            picture={data.restaurant.picture}
+          />
+          <div className="content">
+            <Menu categories={data.categories} />
+          </div>
+        </>
+      )}
     </div>
   );
 }

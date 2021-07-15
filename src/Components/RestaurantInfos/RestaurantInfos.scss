@@ -1,0 +1,25 @@
+@import "../../sizing.scss";
+@import "../../color.scss";
+
+.RestaurantInfos {
+  display: flex;
+  padding: 30px;
+  width: $block-width;
+  margin: 0 auto;
+  h1 {
+    font-weight: bold;
+    color: $title-color;
+    font-size: 32px;
+  }
+
+  p {
+    color: $text-color;
+    font-size: 19px;
+    line-height: 1.8rem;
+  }
+  img {
+    height: 200px;
+    width: 350px;
+    border-radius: $border-radius;
+  }
+}

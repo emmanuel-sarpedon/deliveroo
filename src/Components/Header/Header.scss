@@ -1,0 +1,12 @@
+@import "../../sizing.scss";
+
+.header {
+  header {
+    width: $block-width;
+    margin: 0 auto;
+  }
+
+  padding: $padding;
+  border-bottom: lightgrey 1px solid;
+  box-sizing: border-box;
+}
