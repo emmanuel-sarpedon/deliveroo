@@ -4,7 +4,7 @@
 
 ## Reproduction d'une page du site Deliveroo <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/f/f7/Deliveroo_logo.svg/langfr-280px-Deliveroo_logo.svg.png" width="100" style="margin: 0 10px">
 
-### 🛠 Techos utilisés
+### 🛠 Techos utilisées
 
 #### 🖥 Front :
 
